@@ -1,0 +1,467 @@
+$C = "../../Common.ui";
+$Nav = "../Nav/Buuz135_AdminUI_TopNavigationBar.ui";
+
+@CustomStyle = TextButtonStyle(
+              Default: (Background: $C.@DefaultSquareButtonDefaultBackground, LabelStyle: $C.@DefaultButtonLabelStyle),
+              Hovered: (Background: $C.@DefaultSquareButtonHoveredBackground, LabelStyle: $C.@DefaultButtonLabelStyle),
+              Pressed: (Background: $C.@DefaultSquareButtonPressedBackground, LabelStyle: $C.@DefaultButtonLabelStyle),
+              Disabled: (Background: $C.@DefaultSquareButtonDisabledBackground, LabelStyle: $C.@DefaultButtonDisabledLabelStyle),
+              Sounds: $C.@ButtonSounds,
+            );
+
+
+$C.@PageOverlay {
+  $Nav.@AdminUITopNavigationBar #AdminUITopNavigationBar {}
+  $C.@Container {
+    Anchor: (Width: 600, Height: 669);
+
+
+    #Title {
+      Group {
+        TextButton #BackButton {
+          Anchor: (Left: 12, Top: 4, Width: 64, Height: 24);
+          Padding: (Left: 8, Top: 2);
+          Text: "< Back";
+          Style: TextButtonStyle(
+            Default: (LabelStyle: (FontSize: 14, TextColor: #93844c, RenderBold: true)),
+            Sounds: $C.@ButtonSounds,
+          );
+          Background: #000000(0.13);
+        }
+        $C.@Title {
+          @Text = "SERVER STATS";
+        }
+
+        $C.@HeaderSearch {}
+      }
+    }
+
+    #Content {
+      LayoutMode: Top;
+
+      Group {
+        LayoutMode: Left;
+        Anchor: (Bottom: 4);
+
+        Background: #93844c(0.13);
+
+        Label {FlexWeight: 1;}
+
+        Label {
+          Text: "CPU";
+          Style: (
+            FontSize: 22,
+            TextColor: #93844c,
+             RenderBold: true
+          );
+        }
+
+        Label {FlexWeight: 1;}
+
+      }
+
+      Group{
+        LayoutMode: Left;
+
+        Group #SystemUsage {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Padding: (Left: 10, Top: 10, Bottom: 10, Right: 10);
+          Background:  #e8ec1a(0.03);
+          OutlineColor: #e8ec1a(0.5);
+          OutlineSize: 1.5;
+
+          Label  {
+            Text: "System Usage";
+            Style: (
+              FontSize: 16,
+              TextColor: #93844c,
+              RenderBold: true
+            );
+          }
+
+          Group {
+            LayoutMode: Top;
+            Anchor: (Top: 5);
+
+            Group {
+              Anchor: (Height: 8, Bottom: 8);
+              Background: "../../Common/ProgressBar.png";
+
+              ProgressBar #SystemCPUUsageBar {
+                BarTexturePath: "../../Common/ProgressBarFill.png";
+                EffectTexturePath: "../../Common/ProgressBarEffect.png";
+                EffectWidth: 102;
+                EffectHeight: 58;
+                EffectOffset: 74;
+                Value: 0.1;
+              }
+            }
+
+            Group {
+              LayoutMode: Left;
+              
+              Label {FlexWeight: 1;}
+              Label #SystemCPUUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label {FlexWeight: 1;}
+            }
+          }
+        }
+
+        Group #ProcessUsage {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Padding: (Left: 10, Top: 10, Bottom: 10, Right: 10);
+          Anchor: (Left: 4);
+          Background:  #8aec1a(0.03);
+          OutlineColor: #8aec1a(0.5);
+          OutlineSize: 1.5;
+
+          Label  {
+            Text: "Process Usage";
+            Style: (
+              FontSize: 16,
+              TextColor: #93844c,
+              RenderBold: true
+            );
+          }
+
+          Group {
+            LayoutMode: Top;
+            Anchor: (Top: 5);
+
+            Group {
+              Anchor: (Height: 8, Bottom: 8);
+              Background: "../../Common/ProgressBar.png";
+
+              ProgressBar #ProcessCPUUsageBar {
+                BarTexturePath: "../../Common/ProgressBarFill.png";
+                EffectTexturePath: "../../Common/ProgressBarEffect.png";
+                EffectWidth: 102;
+                EffectHeight: 58;
+                EffectOffset: 74;
+                Value: 0.1;
+              }
+            }
+
+            Group {
+              LayoutMode: Left;
+              
+              Label {FlexWeight: 1;}
+              Label #ProcessCPUUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label {FlexWeight: 1;}
+            }
+          }
+        }
+
+        Group #LoadAverageUsage {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Padding: (Left: 10, Top: 10, Bottom: 10, Right: 10);
+          Anchor: (Left: 4);
+          Background:  #ec981a(0.03);
+          OutlineColor: #ec981a(0.5);
+          OutlineSize: 1.5;
+
+          Label  {
+            Text: "Load Average";
+            Style: (
+              FontSize: 16,
+              TextColor: #93844c,
+              RenderBold: true
+            );
+          }
+
+          Group {
+            LayoutMode: Top;
+            Anchor: (Top: 5);
+
+            Group {
+              Anchor: (Height: 8, Bottom: 8);
+              Background: "../../Common/ProgressBar.png";
+
+              ProgressBar #LoadAverageCPUUsageBar {
+                BarTexturePath: "../../Common/ProgressBarFill.png";
+                EffectTexturePath: "../../Common/ProgressBarEffect.png";
+                EffectWidth: 102;
+                EffectHeight: 58;
+                EffectOffset: 74;
+                Value: 0.1;
+              }
+            }
+
+            Group {
+              LayoutMode: Left;
+              
+              Label {FlexWeight: 1;}
+              Label #LoadAverageCPUUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label {FlexWeight: 1;}
+            }
+          }
+        }
+
+        
+      }
+
+
+      Group{
+        Anchor: (Top: 4);
+        LayoutMode: Left;
+        Group #ProcessUptimeUsage {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Padding: (Left: 10, Top: 10, Bottom: 10, Right: 10);
+          
+          Background:  #1aecec(0.03);
+          OutlineColor: #1aecec(0.5);
+          OutlineSize: 1.5;
+
+          Group {
+            LayoutMode: Left;
+            Label {FlexWeight: 1;}
+            Label  {
+              Text: "Process Uptime";
+              Style: (
+                FontSize: 16,
+                TextColor: #93844c,
+                RenderBold: true
+              );
+            }
+            Label {FlexWeight: 1;}
+          }
+
+          Group {
+            LayoutMode: Top;
+            Anchor: (Top: 5);
+
+
+            Group {
+              LayoutMode: Left;
+              
+              Label {FlexWeight: 1;}
+              Label #ProcessUptime {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label {FlexWeight: 1;}
+            }
+          }
+        }
+      }
+
+      Group {
+        LayoutMode: Left;
+        Anchor: (Bottom: 4, Top: 8);
+
+        Background: #93844c(0.13);
+
+        Label {FlexWeight: 1;}
+
+        Label {
+          Text: "RAM";
+          Style: (
+            FontSize: 22,
+            TextColor: #93844c,
+             RenderBold: true
+          );
+        }
+
+        Label {FlexWeight: 1;}
+      }
+      Group{
+      
+        LayoutMode: Left;
+        Group #ProcessRamUsage {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Padding: (Left: 10, Top: 10, Bottom: 10, Right: 10);
+          
+          Background:  #8d1aec(0.03);
+          OutlineColor: #8d1aec(0.5);
+          OutlineSize: 1.5;
+
+          Group {
+            LayoutMode: Left;
+            Label {FlexWeight: 1;}
+            Label  {
+              Text: "PROCESS";
+              Style: (
+                FontSize: 16,
+                TextColor: #93844c,
+                RenderBold: true
+              );
+            }
+            Label {FlexWeight: 1;}
+          }
+
+          Group {
+            LayoutMode: Top;
+            Anchor: (Top: 5);
+            Group {
+              Anchor: (Height: 8, Bottom: 8);
+              Background: "../../Common/ProgressBar.png";
+
+              ProgressBar #ServerRamUsageBar {
+                BarTexturePath: "../../Common/ProgressBarFill.png";
+                EffectTexturePath: "../../Common/ProgressBarEffect.png";
+                EffectWidth: 102;
+                EffectHeight: 58;
+                EffectOffset: 74;
+                Value: 0.1;
+              }
+            }
+
+            Group {
+              LayoutMode: Left;
+              
+              Label {FlexWeight: 1;}
+              Label  {
+                Text: "Current: ";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #93844c,
+                  RenderBold: true
+                );
+              }
+              Label #ServerRamUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label  {
+                Anchor: (Left: 10);
+                Text: "Max: ";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #93844c,
+                  RenderBold: true
+                );
+              }
+              Label #MaxServerRamUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label {FlexWeight: 1;}
+            }
+          }
+        }
+
+        Group #ServerRamUsage {
+          FlexWeight: 1;
+          LayoutMode: Top;
+          Padding: (Left: 10, Top: 10, Bottom: 10, Right: 10);
+          Anchor: (Left: 4);
+          Background:  #ec1ada(0.03);
+          OutlineColor: #ec1ada(0.5);
+          OutlineSize: 1.5;
+
+          Group {
+            LayoutMode: Left;
+            Label {FlexWeight: 1;}
+            Label  {
+              Text: "SYSTEM";
+              Style: (
+                FontSize: 16,
+                TextColor: #93844c,
+                RenderBold: true
+              );
+            }
+            Label {FlexWeight: 1;}
+          }
+
+          Group {
+            LayoutMode: Top;
+            Anchor: (Top: 5);
+            Group {
+              Anchor: (Height: 8, Bottom: 8);
+              Background: "../../Common/ProgressBar.png";
+
+              ProgressBar #AllRamUsageBar {
+                BarTexturePath: "../../Common/ProgressBarFill.png";
+                EffectTexturePath: "../../Common/ProgressBarEffect.png";
+                EffectWidth: 102;
+                EffectHeight: 58;
+                EffectOffset: 74;
+                Value: 0.1;
+              }
+            }
+
+            Group {
+              LayoutMode: Left;
+              
+              Label {FlexWeight: 1;}
+              Label  {
+                Text: "Current: ";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #93844c,
+                  RenderBold: true
+                );
+              }
+              Label #AllRamUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label  {
+                Anchor: (Left: 10);
+                Text: "Max: ";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #93844c,
+                  RenderBold: true
+                );
+              }
+              Label #MaxAllRamUsage {
+                Text: "45%";
+                Style: (
+                  FontSize: 14,
+                  TextColor: #ffffff,
+                  RenderBold: true
+                );
+              }
+              Label {FlexWeight: 1;}
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+$C.@BackButton {}

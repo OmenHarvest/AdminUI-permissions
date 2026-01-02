@@ -1,0 +1,46 @@
+{
+  "TranslationProperties": {
+    "Name": "adminui_items.admin_stick.name",
+    "Description": "adminui_items.admin_stick.desc"
+  },
+  "Icon": "Icons/ItemsGenerated/Ingredient_Stick.png",
+  "Categories": [
+    "Items.Tools"
+  ],
+  "Model": "Items/Ingredients/Stick.blockymodel",
+  "Texture": "Items/Ingredients/Stick_Texture.png",
+  "PlayerAnimationsId": "Item",
+  "ResourceTypes": [
+    {
+      "Id": "Fuel"
+    },
+    {
+      "Id": "Charcoal"
+    }
+  ],
+  "IconProperties": {
+    "Scale": 1.21,
+    "Rotation": [
+      67.0,
+      330.0,
+      0.0
+    ],
+    "Translation": [
+      1.3,
+      -1.0
+    ]
+  },
+  "ItemEntity": {
+    "ParticleSystemId": null
+  },
+  "ItemSoundSetId": "ISS_Items_Foliage",
+  "Quality": "Developer",
+  "Interactions": {
+    "Ability1": "Buuz135_AdminUI_Admin_Stick",
+    "Ability2": "Buuz135_AdminUI_Admin_Stick",
+    "Ability3": "Buuz135_AdminUI_Admin_Stick",
+    "Primary": "Buuz135_AdminUI_Admin_Stick",
+    "Secondary": "Buuz135_AdminUI_Admin_Stick",
+    "Pick": "Buuz135_AdminUI_Admin_Stick"
+  }
+}

@@ -1,0 +1,3 @@
+$NavBar = "Buuz135_AdminUI_TopNavigationBar.ui";
+
+Group { $NavBar.@ToolButton #NavActionButton{ Text: "Whitelist"; }}

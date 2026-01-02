@@ -1,0 +1,41 @@
+$C = "../Common.ui";
+$Nav = "Nav/Buuz135_AdminUI_TopNavigationBar.ui";
+
+$C.@PageOverlay {
+  $Nav.@AdminUITopNavigationBar #AdminUITopNavigationBar {}
+  $C.@Container {
+    Anchor: (Width: 600, Height: 669);
+
+    #Title {
+      Group {
+        $C.@Title {
+          @Text = "Admin UI";
+        }
+
+        
+      }
+    }
+
+    #Content {
+      LayoutMode: Left;
+
+      Group #Main {
+        LayoutMode: Top;
+
+        Group #IndexList {
+          Anchor: (Width: 580);
+          FlexWeight: 1;
+          LayoutMode: TopScrolling;
+          Padding: (Left: 4);
+          ScrollbarStyle: $C.@DefaultScrollbarStyle;
+
+          Group #IndexCards {
+            LayoutMode: Top;
+          }
+        }
+      }
+    }
+  }
+}
+
+$C.@BackButton {}
