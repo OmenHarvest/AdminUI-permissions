@@ -173,6 +173,7 @@ public class WarpGui extends InteractiveCustomUIPage<WarpGui.SearchGuiData> {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
         var i = 0;
         for (Map.Entry<String, Warp> warpEntry : items.entrySet()) {
+            if (warpEntry.getValue().getCreator().contains("*Tele")) continue;
             uiCommandBuilder.append("#IndexCards", "Pages/Warp/Buuz135_AdminUI_WarpEntry.ui");
             uiCommandBuilder.set("#IndexCards[" + i + "] #WarpName.Text", warpEntry.getValue().getId());
             uiCommandBuilder.set("#IndexCards[" + i + "] #WarpBy.Text", "By " + warpEntry.getValue().getCreator());
