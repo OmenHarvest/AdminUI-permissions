@@ -182,10 +182,6 @@ public class PlayerGui extends InteractiveCustomUIPage<PlayerGui.SearchGuiData> 
     private void buildList(@Nonnull Ref<EntityStore> ref, @Nonnull UICommandBuilder commandBuilder, @Nonnull UIEventBuilder eventBuilder,  @Nonnull Store<EntityStore> store) {
         var players = Universe.get().getPlayers().stream().map(PlayerRef::getUsername).toList();
 
-        Player playerComponent = store.getComponent(ref, Player.getComponentType());
-
-        assert playerComponent != null;
-
         if (this.searchQuery.isEmpty()) {
             visibleItems.clear();
             visibleItems.addAll(players);
@@ -199,7 +195,7 @@ public class PlayerGui extends InteractiveCustomUIPage<PlayerGui.SearchGuiData> 
 
             }
         }
-        this.buildButtons(visibleItems, playerComponent, commandBuilder, eventBuilder, store);
+        this.buildButtons(visibleItems, commandBuilder, eventBuilder, store);
     }
 
     @Override
@@ -207,7 +203,7 @@ public class PlayerGui extends InteractiveCustomUIPage<PlayerGui.SearchGuiData> 
         super.close();
     }
 
-    private void buildButtons(List<String> items, @Nonnull Player playerComponent, @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder eventBuilder, @Nonnull Store<EntityStore> store) {
+    private void buildButtons(List<String> items,  @Nonnull UICommandBuilder uiCommandBuilder, @Nonnull UIEventBuilder eventBuilder, @Nonnull Store<EntityStore> store) {
         uiCommandBuilder.clear("#IndexCards");
         uiCommandBuilder.appendInline("#Main #IndexList", "Group #IndexCards { LayoutMode: Left; }");
         var gamemodes = Arrays.stream(GameMode.values()).map(mode -> new DropdownEntryInfo(LocalizableString.fromString(mode.name()), mode.name())).collect(Collectors.toList());

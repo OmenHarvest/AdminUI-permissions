@@ -133,7 +133,7 @@ public class AdminUI extends JavaPlugin {
     }
 
     private static void onModelAssetLoad(LoadedAssetsEvent<String, ModelAsset, DefaultAssetMap<String, ModelAsset>> event) {
-        MODELS = event.getLoadedAssets();
+        MODELS = event.getAssetMap().getAssetMap();
     }
 
     @Override
