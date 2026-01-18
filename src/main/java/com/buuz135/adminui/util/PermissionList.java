@@ -19,6 +19,7 @@ public enum PermissionList {
     PLAYER_OPEN_UI("open", "player", "You don't have permission to open players menu"),
     //ADMIN STICK
     ADMIN_STICK_OPEN_UI("open", "adminstick", "You don't have permission to open admin stick menu"),
+    ADMIN_STICK_USE("use", "adminstick", "You don't have permission to use the admin stick"),
     //BACKUPS
     BACKUP_OPEN_UI("open", "backup", "You don't have permission to open backups menu"),
     //STATS
